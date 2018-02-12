@@ -1,0 +1,30 @@
+.loading {
+  margin-top: 30%;
+}
+
+.instructions {
+  float: left;
+  width: 20vw;
+  margin-left: 2vw;
+}
+
+.map {
+  margin: 2%;
+  float: right;
+}
+
+#red {
+  color: rgb(255, 0, 0);
+}
+
+#green {
+  color: rgb(0, 255, 0);
+}
+
+.comma {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: auto;
+}
