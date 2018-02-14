@@ -7,7 +7,7 @@ export function getJSONs() {
   return tripJSONs;
 }
 
-export function calculateColor(speed, min, max) {
+function calculateColor(speed, min, max) {
   const fraction = (speed - min) / (max - min);
 
   const g = Math.floor(fraction * 255);

@@ -48,14 +48,3 @@ function addToSpeedData(speedData, coord) {
   }
   return speedData;
 }
-
-function pointInCoords(point, coords) {
-  if (((point.lat() > coords[0].lat && point.lat() < coords[coords.length-1].lat)
-    || (point.lat() < coords[0].lat && point.lat() > coords[coords.length-1].lat))
-    && ((point.lng() > coords[0].lng && point.lng() < coords[coords.length-1].lng)
-    || (point.lng() < coords[0].lng && point.lng() > coords[coords.length-1].lng))) {
-      return true;
-  } else {
-    return false;
-  }
-}
