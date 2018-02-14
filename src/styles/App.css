@@ -1,5 +1,5 @@
 .loading {
-  margin-top: 30%;
+  clear: both;
 }
 
 .instructions {
@@ -9,7 +9,7 @@
 }
 
 .map {
-  margin: 2%;
+  margin: 0 2% 2% 2%;
   float: right;
 }
 
@@ -27,4 +27,17 @@
   left: 5px;
   width: 20px;
   height: auto;
+}
+
+.link {
+  float: right;
+  font-size: .8em;
+  padding: 10px;
+  margin-right: 2%;
+  text-decoration: none;
+  color: #3579DC;
+}
+
+.link:hover {
+  color: #7EB6FF;
 }

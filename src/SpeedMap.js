@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { speedData } from './dataProcessing.js';
+import { speedData } from './SpeedDataProcessing.js';
 
-export default class Map extends Component {
+export default class SpeedMap extends Component {
   constructor() {
     super();
 
@@ -30,11 +30,6 @@ export default class Map extends Component {
     } else {
       throw new Error();
     }
-    // const speedMap = new this.props.google.maps.visualization.HeatmapLayer({
-    //   data: speedData,
-    //   radius: 20,
-    // });
-    // speedMap.setMap(this.map);
   }
 
   createMarkers = () => {
@@ -56,7 +51,7 @@ export default class Map extends Component {
       const infowindow = new this.props.google.maps.InfoWindow({
         content: `<h3>Average speed</h3>
         <h4>at latitude: ${point.lat} and longitude: ${point.lng}</h4>
-        <h3>is ${point.speed} mph</h3>`
+        <h3>is ${point.speed.toFixed(2)} mph</h3>`
       });
 
       marker.addListener('click', function() {

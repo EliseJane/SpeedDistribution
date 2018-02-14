@@ -1,4 +1,4 @@
-function getJSONs() {
+export function getJSONs() {
   const context = require.context(".", true, /\.json$/);
   let tripJSONs = {};
   context.keys().forEach(function (key) {
@@ -7,14 +7,7 @@ function getJSONs() {
   return tripJSONs;
 }
 
-// function calculateColors(data, min, max) {
-//   data.forEach(point => {
-//     point.rgb = calculateColor(point.speed, min, max);
-//   });
-//   return data;
-// }
-
-function calculateColor(speed, min, max) {
+export function calculateColor(speed, min, max) {
   const fraction = (speed - min) / (max - min);
 
   const g = Math.floor(fraction * 255);
@@ -23,28 +16,6 @@ function calculateColor(speed, min, max) {
 
   return [r, g, b];
 }
-
-// function getCoords(jsons) {
-//   let speedData = [];
-//   let maxSpeed = -Infinity;
-//   let minSpeed = Infinity;
-//
-//   for (const trip in jsons) {
-//     jsons[trip].coords.forEach(coord => {
-//
-//       maxSpeed = coord.speed > maxSpeed ? coord.speed : maxSpeed;
-//       minSpeed = coord.speed < minSpeed ? coord.speed : minSpeed;
-//
-//       speedData.push({
-//         lat: coord.lat,
-//         lng: coord.lng,
-//         speed: coord.speed
-//       });
-//     });
-//   }
-//
-//   return calculateColors(speedData, minSpeed, maxSpeed);
-// }
 
 function getAveragedCoords(jsons) {
   let speedData = {};
@@ -75,7 +46,7 @@ function getAveragedCoords(jsons) {
   return averageThem(speedData, minSpeed, maxSpeed);
 }
 
-function averageThem(data, min, max) {
+export function averageThem(data, min, max) {
   let averaged = [];
 
   Object.keys(data).forEach(point => {

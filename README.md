@@ -1,3 +1,13 @@
+This React web app utilizes the Google Maps API to offer two ways to visualize the distribution of recorded speeds around the Bay Area.
+
+On the root page, you can pick a route and quickly (via use of a hash set) see existing data along that route. The range of speeds along the route is used to convert each speed point into a color ranging from red to green.
+
+Click the link to see all the available speed data plotted on the map. Be ready to wait because it's a lot of data! I averaged the speeds from all the routes of points near each other to cut down on the number of points to be plotted, but it's still a lot.
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

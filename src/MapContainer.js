@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {GoogleApiWrapper} from 'google-maps-react';
-import Map from './Map';
+import SpeedMap from './SpeedMap';
+import RouteMap from './RouteMap';
 
 export class MapContainer extends Component {
   render() {
@@ -13,15 +14,22 @@ export class MapContainer extends Component {
       )
     }
 
-    return (
-      <div className='map'>
-        <Map google={this.props.google} />
-      </div>
-    )
+    if (this.props.page === 'route') {
+      return (
+        <div className='map'>
+          <RouteMap google={this.props.google} />
+        </div>
+      )
+    } else if (this.props.page === 'speed') {
+      return (
+        <div className='map'>
+          <SpeedMap google={this.props.google} />
+        </div>
+      )
+    }
   }
 }
 
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo',
-//  libraries: ['visualization']
 }) (MapContainer)
