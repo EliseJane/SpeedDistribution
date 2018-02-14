@@ -1,5 +1,5 @@
 export function getJSONs() {
-  const context = require.context(".", true, /\.json$/);
+  const context = require.context("../public/trips", true, /\.json$/);
   let tripJSONs = {};
   context.keys().forEach(function (key) {
     tripJSONs[key] = context(key);
